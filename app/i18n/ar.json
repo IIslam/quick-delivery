@@ -1,0 +1,10 @@
+{
+    "authorization": {
+        "login": {
+            "usernameFieldPlaceholder": "",
+            "passwordFieldPlaceholder": "",
+            "signinBtnText": "",
+            "registerBtnText": ""
+        }
+    }
+}

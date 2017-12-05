@@ -1,0 +1,4 @@
+<StackLayout orientation="vertical" [ngClass]="{show: _errorsList.length > 0}">
+    <Label *ngFor="let err of _errorsList" text="{{ 'errors.' + err.errorType | translate:err.params }}" textWrap="true"></Label>
+extraErrorMessage
+</StackLayout>

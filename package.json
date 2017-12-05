@@ -1,0 +1,57 @@
+{
+  "name": "e-wallet",
+  "version": "1.0.0",
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "nativescript": {
+    "id": "com.quick.delivery",
+    "tns-android": {
+      "version": "3.1.1"
+    },
+    "tns-ios": {
+      "version": "3.1.0"
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "^4.3.6",
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "@angular/router": "~4.0.0",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/effects": "^2.0.4",
+    "@ngrx/store": "^2.2.3",
+    "@ngx-translate/core": "^7.2.0",
+    "@ngx-translate/http-loader": "^1.0.2",
+    "lodash": "^4.17.4",
+    "nativescript-angular": "~3.0.0",
+    "nativescript-hook-debug-production": "^1.0.4",
+    "nativescript-telerik-ui": "^2.0.1",
+    "nativescript-theme-core": "~1.0.4",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "^5.1.0",
+    "tns-core-modules": "~3.0.0",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "@biesbjerg/ngx-translate-extract": "^2.3.2",
+    "babel-traverse": "6.18.0",
+    "babel-types": "6.18.0",
+    "babylon": "6.13.1",
+    "codelyzer": "^3.1.2",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "^0.4.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.3.2",
+    "zone.js": "~0.7.2"
+  },
+  "scripts": {
+    "start": "tns run",
+    "extract": "ngx-translate-extract --input ./app --output ./app/i18n/template.json --clean --format namespaced-json"
+  }
+}

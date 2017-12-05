@@ -1,0 +1,25 @@
+.sidedrawer-header {
+  padding-top: 25;
+  padding-bottom: 25;
+  background-color: #076936;
+}
+
+.sidedrawer-header .sidedrawer-header-image {
+  margin-bottom: 10
+}
+
+.sidedrawer-header .sidedrawer-header-brand {
+  font-size: 18;
+  color: #076936;
+}
+
+.sidedrawer-content .sidedrawer-list-item-text {
+  color: #076936;
+}
+
+.sidedrawer-list-item-text.borderless-btn {
+  text-transform: capitalize;
+  padding-right: 20%;
+  width: 100%;
+  border-width: 0;
+}

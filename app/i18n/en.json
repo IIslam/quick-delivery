@@ -1,0 +1,18 @@
+{
+    "errors": {
+        "required": "{{propery}} can not be empty",
+        "minlength": "{{propery}} must not be less than {{requiredLength}}, you entered {{actualLength}}",
+        "maxlength" : "{{propery}} must not exceed {{requiredLength}}, you entered {{actualLength}}",
+        "ERR_INVALID_CRED" : "Mobile or password are not correct"
+    },
+    "authorization": {
+        "login": {
+            "username": "Mobile",
+            "password": "Password",
+            "usernameFieldPlaceholder": "Mobile",
+            "passwordFieldPlaceholder": "Password",
+            "signinBtnText": "Sign In",
+            "registerBtnText": "Not a member? Register here."
+        }
+    }
+}

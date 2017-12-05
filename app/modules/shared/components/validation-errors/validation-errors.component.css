@@ -1,0 +1,19 @@
+@keyframes slide {
+    from { transform: translate(0, 100); }
+    to { transform: translate(0, 0); }
+}
+
+StackLayout{
+    background-color: #000;
+    color:#fff;
+    padding:10;
+    opacity: 0;
+}
+
+StackLayout.show {
+    opacity: 0.7;
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: spring;
+}
