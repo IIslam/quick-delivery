@@ -7,7 +7,8 @@ import { RegisterationModel } from '../../../../proxy'
 @Component({
     selector: 'epw-register-form',
     moduleId: module.id,
-    templateUrl: './registeration-form.html'
+    templateUrl: './registeration-form.html',
+    styleUrls: ['registeration-form.css']
 })
 
 export class RegisterationForm {

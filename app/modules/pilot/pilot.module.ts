@@ -17,8 +17,7 @@ export const pilotRoutes: Routes = [
         canActivateChild: [AuthrizationGuardService],
         children: [
             { path: '', redirectTo: '/home/', pathMatch: 'full' },
-            // { path: 'cashin', component: WalletTransferComponent, outlet: 'cashinoutlet' },
-            // { path: 'payment', component: WalletTransferComponent, outlet: 'paymentoutlet' },
+            { path: 'home', component: WalletTransferComponent, outlet: 'paymentoutlet' },
         ]
     }
 ]

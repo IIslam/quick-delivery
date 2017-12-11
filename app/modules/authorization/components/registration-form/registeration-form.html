@@ -1,88 +1,36 @@
-<!-- <ActionBar title="register" class="text-center footnote">
-    <NavigationButton text="Back" ios.position="left"></NavigationButton>
-</ActionBar>
-<GridLayout backgroundColor="#CCCCCC">
-    <ScrollView>
-        <StackLayout margin="10" verticalAlignment="center">
-            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
-                <StackLayout class="input-field">
-                    <Label text="FullName" class="label font-weight-bold m-b-5"></Label>
-                    <TextField #fullname="ngModel" [(ngModel)]="user.fullname" class="input" required></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-                <StackLayout class="input-field">
-                    <Label text="Password" class="label font-weight-bold m-b-5"></Label>
-                    <TextField hint="Password" [(ngModel)]='user.password' secure="true"></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-                <StackLayout class="input-field">
-                    <Label text="   " class="label font-weight-bold m-b-5"></Label>
-                    <TextField class="input" [(ngModel)]="user.mobile"></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-                <StackLayout class="input-field">
-                    <Label text="identifaction" class="label font-weight-bold m-b-5"></Label>
-                    <TextField class="input" [(ngModel)]="user.identification"></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-                <Button class="btn btn-primary w-full" text="Register" (tap)="register()"></Button>
-                <Label [nsRouterLink]="['/login']" text="Back" class="text-center footnote"></Label>
-            </StackLayout>
-        </StackLayout>
-    </ScrollView>
-</GridLayout> -->
-
-
 <ActionBar title="register" class="text-center footnote">
     <NavigationButton text="Back" ios.position="left"></NavigationButton>
 </ActionBar>
-<GridLayout backgroundColor="#CCCCCC">
-    <ScrollView>
-        <StackLayout class="form" verticalAlignment="center">
-            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+<DockLayout stretchLastChild="true">
+    <StackLayout class="form" verticalAlignment="center">
+        <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
 
-                <StackLayout class="input-field">
-                    <Label text="fullname" class="label font-weight-bold m-b-5"></Label>
-                    <TextField #fullname="ngModel" [(ngModel)]="user.fullname" minlength="5" class="input" required></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-
-                <StackLayout *ngIf="fullname.errors && (fullname.dirty || fullname.touched)">
-                    <Label *ngIf="fullname.errors.required" text="- An email is required -"></Label>
-                    <Label *ngIf="fullname.errors.minlength" text="- An fullname must be longer than 15 characters -"></Label>
-                </StackLayout>
-
-                <StackLayout class="input-field">
-                    <Label text="Password" class="label font-weight-bold m-b-5"></Label>
-                    <TextField #password="ngModel" secure="true" minlength="5" [(ngModel)]="user.password" class="input" required></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-
-                <StackLayout *ngIf="password.errors && (password.dirty || password.touched)">
-                    <Label *ngIf="password.errors.required" text="- A password is required -"></Label>
-                    <Label *ngIf="password.errors.minlength" text="- A  Password must be longer than 5 characters -"></Label>
-                </StackLayout>
-
-                <StackLayout class="input-field">
-                    <Label text="mobile" class="label font-weight-bold m-b-5"></Label>
-                    <TextField #mobile="ngModel" [(ngModel)]="user.mobile" class="input" mobile></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-                <StackLayout *ngIf="mobile.errors && (mobile.dirty || mobile.touched)">
-                    <Label *ngIf="mobile.errors.mobile" text="- Mobile Must be vaild -"></Label>
-                </StackLayout>
-
-                <StackLayout class="input-field">
-                    <Label text="identifaction" class="label font-weight-bold m-b-5"></Label>
-                    <TextField class="input" [(ngModel)]="user.identification"></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
-                </StackLayout>
-
-                <StackLayout class="input-field">
-                    <Button *ngIf="fullname.valid && password.valid && mobile.valid" text="Register" class="btn btn-primary" (tap)="register()"> </Button>
-                    <Label [nsRouterLink]="['/login']" text="Back" class="text-center footnote"></Label>
-                </StackLayout>
+            <TextField #fullname="ngModel" [(ngModel)]="user.fullname" minlength="5" class="input" hint="اسم المستخدم" required></TextField>
+            <StackLayout *ngIf="fullname.errors && (fullname.dirty || fullname.touched)">
+                <Label *ngIf="fullname.errors.required" text="- An email is required -"></Label>
+                <Label *ngIf="fullname.errors.minlength" text="- An fullname must be longer than 15 characters -"></Label>
             </StackLayout>
+
+            <TextField #mobile="ngModel" [(ngModel)]="user.mobile" hint="رقم الهاتف" class="input" mobile></TextField>
+            <StackLayout *ngIf="mobile.errors && (mobile.dirty || mobile.touched)">
+                <Label *ngIf="mobile.errors.mobile" text="- Mobile Must be vaild -"></Label>
+            </StackLayout>
+
+            <TextField #password="ngModel" secure="true" minlength="5" [(ngModel)]="user.password" hint="كلمة المرر" class="input" required></TextField>
+            <StackLayout *ngIf="password.errors && (password.dirty || password.touched)">
+                <Label *ngIf="password.errors.required" text="- A password is required -"></Label>
+                <Label *ngIf="password.errors.minlength" text="- A  Password must be longer than 5 characters -"></Label>
+            </StackLayout>
+
+            <TextField class="input" [(ngModel)]="user.identification" hint="الرقم القومي"></TextField>
+            <StackLayout class="input-field">
+                <Button text="تسجيل االاشتراك" (tap)="register()">
+                </Button>
+                <Label [nsRouterLink]="['/login']" text="رجوع" class="text-center footnote"></Label>
+                <Label [nsRouterLink]="['/pilot/home']" text="رجوع" class="text-center footnote"></Label>
+
+            </StackLayout>
+
         </StackLayout>
-    </ScrollView>
-</GridLayout>
+    </StackLayout>
+</DockLayout>
