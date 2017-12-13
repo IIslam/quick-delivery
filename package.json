@@ -31,7 +31,6 @@
     "lodash": "^4.17.4",
     "nativescript-angular": "~3.0.0",
     "nativescript-hook-debug-production": "^1.0.4",
-    "nativescript-pro-ui": "^3.2.0",
     "nativescript-telerik-ui": "^2.0.1",
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.8",
