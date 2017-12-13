@@ -7,7 +7,6 @@ import { LoginComponent } from './authorization/containers/login/login.component
 import { RegisterComponent } from './authorization/containers/register/register-component';
 
 import { SharedModule } from './shared';
-import { ManagementModule, managementRoutes } from './management/management.module';
 import { PilotModule, pilotRoutes } from './pilot/pilot.module';
 import { ResturantModule, resturantRoutes } from './resturant/resturant.module';
 
@@ -16,7 +15,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  ...managementRoutes,
+
   ...pilotRoutes,
   ...resturantRoutes
 ];
@@ -26,7 +25,6 @@ export const routes: Routes = [
     NativeScriptRouterModule.forRoot(routes),
     SharedModule,
     AuthorizationModule,
-    ManagementModule,
     PilotModule,
     ResturantModule
   ],
