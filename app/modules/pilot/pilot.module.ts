@@ -6,13 +6,13 @@ import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 
 import { StateModule } from '../../state/state.module';
 import { AuthrizationGuardService } from '../authorization/services/auth-guard.service';
-import { WalletTabComponent } from './containers/wallet-tab/wallet-tab.component';
 import { TransactionTypePipe } from './pipes/transaction-type.pipe';
 import { transactionSortByDatePipe } from './pipes/transactions-sort.pipe';
+import { PilotProfileComponent } from './containers/pilot-profile/pilot-profile.component';
 
 export const pilotRoutes: Routes = [
     {
-        path: 'pilot', component: WalletTabComponent,
+        path: 'pilot', component: PilotProfileComponent,
         canActivate: [AuthrizationGuardService],
         canActivateChild: [AuthrizationGuardService],
         children: [
@@ -31,9 +31,9 @@ export const pilotRoutes: Routes = [
     ],
     exports: [],
     declarations: [
+        PilotProfileComponent,
         TransactionTypePipe,
-        transactionSortByDatePipe,
-        WalletTabComponent,
+        transactionSortByDatePipe
     ],
     providers: [],
     schemas: [

@@ -9,7 +9,7 @@ export interface AuthorizationState {
 
 export const AuthorizationInitialState: AuthorizationState = {
     token: null,
-    isLoggedIn: false,
+    isLoggedIn: true,
     isRegister: false,
     errorMessage: null
 };
