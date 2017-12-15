@@ -17,38 +17,6 @@ export class AuthorizationEffectsService {
         private authProxyService: AuthProxyService) { }
 
     @Effect()
-    onRegister(): Observable<Action> {
-        return this.actions$
-            .ofType(AuthorizationActions.REGISTER)
-            .switchMap(action => {
-                return this.authProxyService.getTokenFromRegister(action.payload)
-                    .map(token => {
-                        this.tokenStoreService.setToken(token.access_token);
-                        return AuthorizationActions.createRegisterSuccessAction(token);
-                    })
-                    .catch(error => {
-                        return Observable.of(AuthorizationActions.createRegisterFailAction(error.text()));
-                    });
-            });
-    }
-
-    // @Effect()
-    // onActivate(): Observable<Action> {
-    //     return this.actions$
-    //         .ofType(AuthorizationActions.ACTIVATE)
-    //         .switchMap(action => {
-    //             return this.authProxyService.getTokenFromActivate(action.payload)
-    //                 .map(token => {
-    //                     this.tokenStoreService.setToken(token.access_token);
-    //                     return AuthorizationActions.createActivateSuccessAction(token);
-    //                 })
-    //                 .catch(error => {
-    //                     return Observable.of(AuthorizationActions.createActivateFailAction(error));
-    //                 });
-    //         });
-    // }
-
-    @Effect()
     onLogin(): Observable<Action> {
         return this.actions$
             .ofType(AuthorizationActions.LOG_IN)

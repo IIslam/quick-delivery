@@ -1,4 +1,4 @@
 export interface MembershipCredentialsModel {
-    username: string;
+    email: string;
     password: string;
 }

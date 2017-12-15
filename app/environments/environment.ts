@@ -5,8 +5,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://196.221.70.125:8012',
+  baseUrl: 'http://localhost:29101',
   client_id: '1',
   language: 'en'
-
 };

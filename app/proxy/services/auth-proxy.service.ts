@@ -17,7 +17,7 @@ export class AuthProxyService {
   }
 
   getTokenFromCredentials(model: models.MembershipCredentialsModel): Observable<dtos.TokenDto> {
-    const data = `grant_type=password&username=${model.username}&password=${model.password}&client_id=${this.globalConfig.client_id}&client_secret=p@$$w0rd`;
+    const data = `email=${model.email}&password=${model.password}`;
     const headers = new Headers();
     headers.append('content-Type', 'application/x-www-form-urlencoded');
     return this.http.request('/token', {
@@ -27,31 +27,6 @@ export class AuthProxyService {
     }).map(s => {
       return s.json()
     });
-
   }
 
-  getTokenFromRegister(model: models.RegisterationModel): Observable<dtos.TokenDto> {
-    const data = `grant_type=register&fullname=${model.fullname}&password=${model.password}&mobile=${model.mobile}&identification=${model.identification}&client_id=${this.globalConfig.client_id}&client_secret=p@$$w0rd`;
-    const headers = new Headers();
-    console.log(data);
-    headers.append('content-Type', 'application/x-www-form-urlencoded');
-    return this.http.request('/token', {
-      method: RequestMethod.Post,
-      body: data,
-      headers: headers
-    }).map(s => s.json());
-
-  }
-
-  // getTokenFromActivate(model: models.ActivateUserModel): Observable<dtos.TokenDto> {
-  //   const data = `grant_type=activate&mobile=${model.mobileNumber}&pin=${model.pin}&client_id=${this.globalConfig.client_id}&client_secret=p@$$w0rd`;
-  //   const headers = new Headers();
-  //   headers.append('content-Type', 'application/x-www-form-urlencoded');
-  //   return this.http.request('/token', {
-  //     method: RequestMethod.Post,
-  //     body: data,
-  //     headers: headers
-  //   }).map(s => s.json());
-
-  // }
 }
