@@ -5,9 +5,10 @@ import { StackLayout } from 'ui/layouts/stack-layout';
 import { RouterExtensions } from 'nativescript-angular';
 
 @Component({
-    selector: 'epw-pilot-profile',
+    selector: 'profile',
     moduleId: module.id,
     templateUrl: './pilot-profile.component.html',
+    styleUrls: ['./pilot-profile.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 

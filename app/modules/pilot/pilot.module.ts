@@ -8,19 +8,19 @@ import { StateModule } from '../../state/state.module';
 import { AuthrizationGuardService } from '../authorization/services/auth-guard.service';
 import { TransactionTypePipe } from './pipes/transaction-type.pipe';
 import { transactionSortByDatePipe } from './pipes/transactions-sort.pipe';
-import { PilotProfileComponent } from './containers/pilot-profile/pilot-profile.component';
+// import { PilotProfileComponent } from './containers/pilot-profile/pilot-profile.component';
 
 export const pilotRoutes: Routes = [
-    {
-        path: 'pilot', component: PilotProfileComponent,
-        canActivate: [AuthrizationGuardService],
-        canActivateChild: [AuthrizationGuardService],
-        children: [
-            // { path: '', redirectTo: '/home/', pathMatch: 'full' },
-            // { path: 'home', component: WalletTransferComponent, outlet: 'paymentoutlet' },
-        ]
-    }
-]
+    // {
+    //     // path: 'pilot', component: PilotProfileComponent,
+    //     // canActivate: [AuthrizationGuardService],
+    //     // canActivateChild: [AuthrizationGuardService],
+    //     // children: [
+    //     //     // { path: '', redirectTo: '/home/', pathMatch: 'full' },
+    //     //     // { path: 'home', component: WalletTransferComponent, outlet: 'paymentoutlet' },
+    //     // ]
+    // }
+];
 
 @NgModule({
     imports: [
@@ -31,7 +31,7 @@ export const pilotRoutes: Routes = [
     ],
     exports: [],
     declarations: [
-        PilotProfileComponent,
+        // PilotProfileComponent,
         TransactionTypePipe,
         transactionSortByDatePipe
     ],

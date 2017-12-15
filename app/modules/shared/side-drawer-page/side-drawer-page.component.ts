@@ -14,6 +14,9 @@ import {
   PushTransition, SlideInOnTopTransition
 } from 'nativescript-telerik-ui/sidedrawer';
 
+import { AuthorizationStateService } from '../../../state';
+import { Observable, Subscription } from 'rxjs/Rx';
+
 @Component({
   selector: 'side-drawer-page',
   templateUrl: 'modules/shared/side-drawer-page/side-drawer-page.component.html',
@@ -35,23 +38,46 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
   /**
    * Navigation Menu Items
    */
-  navMenu: any[] = [
-    { name: 'Home', commands: ['/layout/'] },
-    { name: 'About', commands: ['/layout/about'] },
-    { name: 'Contact', commands: ['/layout/contact'] },
-
-  ];
+  navMenu: any[];
 
   private drawer: SideDrawerType;
+
+  subscriptions: Subscription[] = [];
 
   constructor(
     private routerExtensions: RouterExtensions,
     private activatedRoute: ActivatedRoute,
     private page: Page,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private authorizationStateService: AuthorizationStateService
   ) {
     this.setActionBarIcon(this.page);
     this.setDrawerTransition();
+    this.subscriptions.push(this.authorizationStateService.selectIsAuthenticated()
+      .subscribe(value => {
+        // Switch Case on isAuthenticated Enum and then Route to each module according to value
+        switch (value) {
+          case true:
+            this.navMenu = [
+              { name: 'القائمة الرئيسيه', commands: ['/resturant/home'] },
+              { name: 'بيانات الطيارين', commands: ['/resturant/pilots'] },
+              { name: 'الاشعارات', commands: ['/resturant/notifications'] },
+              { name: 'الاتصال بالادارة', commands: ['/resturant/contact'] }
+            ];
+            break;
+          default:
+            this.navMenu = [
+              { name: 'القائمة الرئيسيه', commands: ['/pilot/home'] },
+              { name: 'توصيلاتى', commands: ['/pilot/deliveries'] },
+              { name: 'المحفظه', commands: ['/pilot/wallet'] },
+              { name: 'الاشعارات', commands: ['/pilot/notifications'] },
+              { name: 'الاعدادات', commands: ['/pilot/settings'] },
+              { name: 'الاتصال بالادارة', commands: ['/pilot/contact'] }
+            ];
+            break;
+        }
+        // ------------------------------------------------------------------------
+      }));
   }
 
   ngAfterViewInit() {
@@ -113,9 +139,9 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
 
   private getNavigationButton() {
     let navActionItem = new ActionItem();
-    navActionItem.icon = 'res://ic_menu_black';
+    navActionItem.icon = 'res://nav_icon';
     if (navActionItem.ios) {
-      navActionItem.ios.position = 'left';
+      navActionItem.ios.position = 'right';
     }
     navActionItem.on('tap', this.toggleDrawer.bind(this));
     return navActionItem;

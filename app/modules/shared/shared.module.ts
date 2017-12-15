@@ -16,6 +16,7 @@ import { LayoutPageComponent } from './layout-page/layout-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { PilotProfileComponent } from './pilot/pilot-profile/pilot-profile.component';
 
 
 export class TranslateHttpLoader implements TranslateLoader {
@@ -59,7 +60,8 @@ export function createHttpLoaderFactory(http: Http) {
     LayoutPageComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    PilotProfileComponent
   ],
   exports: [
     ReactiveFormsModule,

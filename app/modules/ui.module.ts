@@ -7,15 +7,30 @@ import { LoginComponent } from './authorization/containers/login/login.component
 import { RegisterComponent } from './authorization/containers/register/register-component';
 
 import { SharedModule } from './shared';
-import { PilotModule, pilotRoutes } from './pilot/pilot.module';
+import { PilotModule } from './pilot/pilot.module';
 import { ResturantModule, resturantRoutes } from './resturant/resturant.module';
+import { HomeComponent } from './shared/home/home.component';
+import { PilotProfileComponent } from './shared/pilot/pilot-profile/pilot-profile.component';
 
+
+export const pilotRoutes: Routes = [
+  // {
+  //     // path: 'pilot', component: PilotProfileComponent,
+  //     // canActivate: [AuthrizationGuardService],
+  //     // canActivateChild: [AuthrizationGuardService],
+  //     // children: [
+  //     //     // { path: '', redirectTo: '/home/', pathMatch: 'full' },
+  //     //     // { path: 'home', component: WalletTransferComponent, outlet: 'paymentoutlet' },
+  //     // ]
+  // }
+];
 export const routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-
+  { path: 'home', component: HomeComponent },
+  { path: 'pilot/home', component: PilotProfileComponent },
   ...pilotRoutes,
   ...resturantRoutes
 ];
