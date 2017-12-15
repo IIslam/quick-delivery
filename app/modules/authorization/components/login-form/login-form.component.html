@@ -5,7 +5,7 @@
   </StackLayout>
   <StackLayout class="form" [formGroup]="theForm">
     <Image src="~/theme/imgs/logo.png" class="Image"></Image>
-    <TextField hint="username" class="input input-border m-b-20 round" formControlName="authorization.login.username" autocorrect="false"
+    <TextField hint="username" class="input input-border m-b-20 round" formControlName="authorization.login.email" autocorrect="false"
       autocapitalizationType="none"></TextField>
     <TextField hint="password" class="input input-border m-b-20 round" formControlName="authorization.login.password" secure="true"></TextField>
     <Button text="Sign In" (tap)='onClick()' class="btn btn-outline btn-rounded-lg"></Button>

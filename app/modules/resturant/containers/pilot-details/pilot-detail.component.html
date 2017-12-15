@@ -1,0 +1,16 @@
+<ListView row="1" [items]="myArrayItem">
+    <template let-item="item" let-i="index">
+        <StackLayout orientation="horizontal">
+            <StackLayout orientation="vertical">
+                <Label class="bg-label"></Label>
+            </StackLayout>
+            <StackLayout orientation="horizontal">
+                <Label [text]="item.Name"> اسم الطيار </Label>
+                <Label [text]="item.phone">رقم الهاتف</Label>
+                <!-- <Label [text]="item.phone">حاله الرد</Label>
+                <Label [text]="item.phone">وقت الرد</Label> -->
+            </StackLayout>
+            <Image src="~/theme/imgs/pilot.png"></Image>
+        </StackLayout>
+    </template>
+</ListView>

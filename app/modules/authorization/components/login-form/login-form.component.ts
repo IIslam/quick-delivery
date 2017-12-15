@@ -23,7 +23,7 @@ export class LoginFormComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.theForm = this.formBuilder.group({
-      'authorization.login.username': ['', [Validators.required]],
+      'authorization.login.email': ['', [Validators.required]],
       'authorization.login.password': ['', Validators.required]
     });
     this.submit$ = new BehaviorSubject({ validate: false });
@@ -32,7 +32,7 @@ export class LoginFormComponent {
   onClick(): void {
     if (this.theForm.valid) {
       this.loginEvent.emit({
-        username: this.theForm.value['authorization.login.username'],
+        email: this.theForm.value['authorization.login.email'],
         password: this.theForm.value['authorization.login.password']
       });
       this.submit$.next({ validate: false });
