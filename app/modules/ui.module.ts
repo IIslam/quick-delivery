@@ -8,12 +8,13 @@ import { RegisterComponent } from './authorization/containers/register/register-
 
 import { SharedModule } from './shared';
 import { PilotModule } from './pilot/pilot.module';
-import { ResturantModule, resturantRoutes } from './resturant/resturant.module';
+import { ResturantModule } from './resturant/resturant.module';
 import { HomeComponent } from './shared/home/home.component';
 import { PilotProfileComponent } from './shared/pilot/pilot-profile/pilot-profile.component';
-
+import { PilotDetailComponent } from './shared/resturant/pilot-details/pilot-detail.component';
 
 export const pilotRoutes: Routes = [
+  { path: 'pilot/home', component: PilotProfileComponent }
   // {
   //     // path: 'pilot', component: PilotProfileComponent,
   //     // canActivate: [AuthrizationGuardService],
@@ -24,13 +25,16 @@ export const pilotRoutes: Routes = [
   //     // ]
   // }
 ];
+export const resturantRoutes: Routes = [
+  {
+    path: 'resturant/pilots', component: PilotDetailComponent
+  }
+]
 export const routes: Routes = [
-  // { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'pilot/home', component: PilotProfileComponent },
   ...pilotRoutes,
   ...resturantRoutes
 ];
