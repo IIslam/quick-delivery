@@ -1,16 +1,18 @@
 <ListView row="1" [items]="myArrayItem">
     <template let-item="item" let-i="index">
-        <StackLayout orientation="horizontal">
-            <StackLayout orientation="vertical">
-                <Label class="bg-label"></Label>
+        <GridLayout columns="*,*,5*,2*" rows="*=" sdkExampleTitle sdkToggleNavButton>
+            <Label class="bg-label" col="0"></Label>
+            <StackLayout orientation="horizontal" col="1">
+                <Image src="~/theme/imgs/phone.png"></Image>
             </StackLayout>
-            <StackLayout orientation="horizontal">
-                <Label [text]="item.Name"> اسم الطيار </Label>
-                <Label [text]="item.phone">رقم الهاتف</Label>
-                <!-- <Label [text]="item.phone">حاله الرد</Label>
-                <Label [text]="item.phone">وقت الرد</Label> -->
+            <StackLayout col="2" orientation="vertical">
+                <Label [text]="item.name"></Label>
+                <Label [text]="item.phone"></Label>
+                <!-- <Label [text]="item.phone">حاله الرد</Label> -->
+                <!-- <Label [text]="item.phone">وقت الرد</Label> -->
             </StackLayout>
-            <Image src="~/theme/imgs/pilot.png"></Image>
-        </StackLayout>
+            <Image src="~/theme/imgs/pilot.png" col="3"></Image>
+        </GridLayout>
+
     </template>
 </ListView>

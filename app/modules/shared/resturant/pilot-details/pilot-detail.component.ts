@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 
-import { StackLayout } from 'ui/layouts/stack-layout';
-
 import { RouterExtensions } from 'nativescript-angular';
 
 @Component({
