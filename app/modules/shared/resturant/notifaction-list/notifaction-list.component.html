@@ -1,0 +1,15 @@
+<ActionBar title="الاشعارات">
+
+</ActionBar>
+<side-drawer-page>
+    <ListView style="height:100%" [items]="myArrayItem">
+        <template let-item="item" let-i="index">
+            <GridLayout columns="5*,2*" rows="*=" sdkExampleTitle sdkToggleNavButton>
+                <StackLayout col="0" orientation="horizontal">
+                    <Label [text]="item.text"></Label>
+                </StackLayout>
+                <Image src="~/theme/imgs/pilot.png" col="1"></Image>
+            </GridLayout>
+        </template>
+    </ListView>
+</side-drawer-page>

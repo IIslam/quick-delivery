@@ -12,6 +12,7 @@ import { ResturantModule } from './resturant/resturant.module';
 import { HomeComponent } from './shared/home/home.component';
 import { PilotProfileComponent } from './shared/pilot/pilot-profile/pilot-profile.component';
 import { PilotDetailComponent } from './shared/resturant/pilot-details/pilot-detail.component';
+import { NotifactionListComponent } from './shared/resturant/notifaction-list/notifaction-list.component';
 
 export const pilotRoutes: Routes = [
   { path: 'pilot/home', component: PilotProfileComponent }
@@ -28,7 +29,11 @@ export const pilotRoutes: Routes = [
 export const resturantRoutes: Routes = [
   {
     path: 'resturant/pilots', component: PilotDetailComponent
-  }
+  },
+  {
+    path: 'resturant/notifications', component: NotifactionListComponent
+  },
+
 ]
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
