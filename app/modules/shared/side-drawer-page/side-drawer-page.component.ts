@@ -57,13 +57,14 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
       .subscribe(value => {
         // Switch Case on isAuthenticated Enum and then Route to each module according to value
         switch (value) {
-          case true:
+          case false:
             this.navMenu = [
               { name: 'القائمة الرئيسيه', commands: ['/resturant/home'] },
               { name: 'بيانات الطيارين', commands: ['/resturant/pilots'] },
               { name: 'الاشعارات', commands: ['/resturant/notifications'] },
               { name: 'الاتصال بالادارة', commands: ['/resturant/contact'] }
             ];
+
             break;
           default:
             this.navMenu = [

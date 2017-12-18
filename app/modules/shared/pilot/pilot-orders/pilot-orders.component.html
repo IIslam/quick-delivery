@@ -1,0 +1,29 @@
+<ActionBar title="توصيلاتي">
+</ActionBar>
+<side-drawer-page>
+    <ListView style="height:100%" [items]="myArrayItem">
+        <template let-item="item" let-i="index">
+            <GridLayout columns="5*,2*" sdkExampleTitle sdkToggleNavButton>
+                <StackLayout col="0" orientation="vertical">
+                    <GridLayout columns="5*,3*" sdkExampleTitle sdkToggleNavButton>
+                        <Label col="1" text=':اسم المطعم'></Label>
+                        <Label col="0" [text]='item.name'></Label>
+                    </GridLayout>
+                    <GridLayout columns="5*,3*" sdkExampleTitle sdkToggleNavButton>
+                        <Label col="1" text=':رقم الموبيل'></Label>
+                        <Label col="0" [text]='item.phone'></Label>
+                    </GridLayout>
+                    <GridLayout columns="5*,5*" sdkExampleTitle sdkToggleNavButton>
+                        <Label col="1" text=":وقت الرد على الطلب"></Label>
+                        <Label col="0" [text]='item.ordetdate'></Label>
+                    </GridLayout>
+                    <GridLayout columns="5*,3*" sdkExampleTitle sdkToggleNavButton>
+                        <Label col="1" text=":المسافة"></Label>
+                        <Label col="0" [text]='item.distsnce'></Label>
+                    </GridLayout>
+                </StackLayout>
+                <Image src="~/theme/imgs/resturant.png" col="1"></Image>
+            </GridLayout>
+        </template>
+    </ListView>
+</side-drawer-page>

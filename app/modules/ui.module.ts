@@ -13,18 +13,13 @@ import { HomeComponent } from './shared/home/home.component';
 import { PilotProfileComponent } from './shared/pilot/pilot-profile/pilot-profile.component';
 import { PilotDetailComponent } from './shared/resturant/pilot-details/pilot-detail.component';
 import { NotifactionListComponent } from './shared/resturant/notifaction-list/notifaction-list.component';
+import { PilotOrdersComponent } from './shared/pilot/pilot-orders/pilot-orders.component';
 
 export const pilotRoutes: Routes = [
-  { path: 'pilot/home', component: PilotProfileComponent }
-  // {
-  //     // path: 'pilot', component: PilotProfileComponent,
-  //     // canActivate: [AuthrizationGuardService],
-  //     // canActivateChild: [AuthrizationGuardService],
-  //     // children: [
-  //     //     // { path: '', redirectTo: '/home/', pathMatch: 'full' },
-  //     //     // { path: 'home', component: WalletTransferComponent, outlet: 'paymentoutlet' },
-  //     // ]
-  // }
+  { path: 'pilot/home', component: PilotProfileComponent },
+  { path: 'pilot/deliveries', component: PilotOrdersComponent },
+  { path: 'pilot/wallet', component: PilotProfileComponent }
+
 ];
 export const resturantRoutes: Routes = [
   {

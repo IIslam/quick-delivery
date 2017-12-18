@@ -1,10 +1,13 @@
-<ActionBar title="بيانات الطيار">
+<ActionBar title="المحفظه">
 </ActionBar>
 <side-drawer-page>
-    <DockLayout>
-        <StackLayout style="height:100%">
-            <Label text='Welcome to Pilot Screen'></Label>
-            <button text="Pilot Profile" [nsRouterLink]="['/home']" class="btn btn-primary"></button>
-        </StackLayout>
-    </DockLayout>
+    <GridLayout style="margin:5%;height:50%" columns="*,*,*" rows="*,*,*">
+        <Label col="0" row="0" class="text-center" text='النسبه'></Label>
+        <Label col="1" row="0" class="text-center" text='اجمالى التكلفة'></Label>
+        <Label col="2" row="0" class="text-center" text='عدد التوصيلات'></Label>
+        <Label col="0" row="1" class="text-center" text='80 LE'></Label>
+        <Label col="1" row="1" class="text-center" text='100 LE'></Label>
+        <Label col="2" row="1" class="text-center" text='6'></Label>
+        <Label col="0" row="2" class="text-center" colspan="3" text='10 LE'></Label>
+    </GridLayout>
 </side-drawer-page>
