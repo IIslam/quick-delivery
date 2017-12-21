@@ -5,7 +5,7 @@ import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { AuthorizationModule } from './authorization/authorization.module';
 import { LoginComponent } from './authorization/containers/login/login.component';
 import { RegisterComponent } from './authorization/containers/register/register-component';
-
+import { HomeRegister } from './authorization/components/home-reister/home.register';
 import { SharedModule } from './shared';
 import { PilotModule } from './pilot/pilot.module';
 import { ResturantModule } from './resturant/resturant.module';
@@ -33,7 +33,11 @@ export const resturantRoutes: Routes = [
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: HomeRegister },
+  { path: 'register/pilot', component: RegisterComponent },
+  { path: 'register/resturant', component: RegisterComponent },
+  { path: 'register', component: HomeRegister },
+
   { path: 'home', component: HomeComponent },
   ...pilotRoutes,
   ...resturantRoutes

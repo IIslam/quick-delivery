@@ -1,0 +1,11 @@
+<ActionBar title="تسجيل الاشتراك" class="text-center footnote">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<DockLayout stretchLastChild="true">
+    <StackLayout class="form" verticalAlignment="center">
+        <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+            <Button [nsRouterLink]="['/register/pilot']" text="طيار" class="input-field"></Button>
+            <Button [nsRouterLink]="['/register/pilot']" text="مطعمم" class="input-field"></Button>
+        </StackLayout>
+    </StackLayout>
+</DockLayout>

@@ -1,0 +1,48 @@
+DockLayout{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fe9900;
+    /* background-image: ~/theme/imgs/login-bg.jpg; */
+}
+
+bg{
+    background-color: #fe9900;
+}
+
+ActivityIndicator {
+    color:#000;
+}
+
+Image {
+    width:40%;
+    height: 40%;
+}
+
+.form {
+    vertical-align: top;
+    orientation : vertical;
+}
+
+.input {
+    background-color:#9f9c98;
+    placeholder-color:rgb(255, 255, 255);
+    margin: .5%;
+    border-radius: 30%;
+}
+
+.btn {
+    background-color: #fe9900;
+    color:#fffffe;
+    border-style: solid;
+    border-width: 7px;
+    border-color: #626664;
+}
+
+.footnote{
+    color:#000;
+}
+
+.round{
+    border-radius: 20px;
+}
