@@ -9,6 +9,8 @@ import { LoginComponent } from './containers/login/login.component';
 import { RegisterationForm } from './components/registration-form/registeration-form';
 import { RegisterComponent } from './containers/register/register-component';
 import { HomeRegister } from './components/home-reister/home.register';
+import { ReturantRegister } from './components/resturant-register/returant-register';
+import { ResturantRegisterComponent } from './containers/resturant-register/resturant-register-component';
 
 import { MinLengthDirective, IsMobileDirective } from './Directives/input-directives';
 
@@ -23,6 +25,8 @@ import { MinLengthDirective, IsMobileDirective } from './Directives/input-direct
         LoginFormComponent,
         RegisterComponent,
         HomeRegister,
+        ReturantRegister,
+        ResturantRegisterComponent,
         RegisterationForm,
         IsMobileDirective,
         MinLengthDirective
