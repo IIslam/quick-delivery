@@ -11,10 +11,10 @@ import { RouterExtensions } from 'nativescript-angular';
 
 export class NotifactionListComponent {
     public myArrayItem: Array<any> = [{
-        text: "تم وصول الطيار حسين محمد الي المطعم",
+        text: 'تم وصول الطيار حسين محمد الي المطعم',
     },
     {
-        text: "تم وصول الطيار حسين محمد الي المطعم",
+        text: 'تم وصول الطيار حسين محمد الي المطعم',
     },
     ];
 }

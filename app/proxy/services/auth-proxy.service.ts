@@ -17,10 +17,10 @@ export class AuthProxyService {
   }
 
   getTokenFromCredentials(model: models.MembershipCredentialsModel): Observable<dtos.TokenDto> {
-    const data = `email=${model.email}&password=${model.password}`;
+    const data = `email=${model.email}&password=${model.password}&grant_type=password`;
     const headers = new Headers();
     headers.append('content-Type', 'application/x-www-form-urlencoded');
-    return this.http.request('/token', {
+    return this.http.request('/api/auth/login/getToken', {
       method: RequestMethod.Post,
       body: data,
       headers: headers
@@ -29,4 +29,16 @@ export class AuthProxyService {
     });
   }
 
+  getUserType(model: models.MembershipCredentialsModel): Observable<dtos.UserType> {
+    console.log(model.email);
+    console.log(model.password);
+    return this.http.request(`/api/user/checkuserstatus?email=${model.email}&password=${model.password}`, {
+      method: RequestMethod.Get,
+    }).map(s => {
+      return s.json()
+    });
+  }
+
 }
+
+

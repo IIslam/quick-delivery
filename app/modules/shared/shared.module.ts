@@ -20,7 +20,8 @@ import { PilotProfileComponent } from './pilot/pilot-profile/pilot-profile.compo
 import { PilotDetailComponent } from './resturant/pilot-details/pilot-detail.component';
 import { NotifactionListComponent } from './resturant/notifaction-list/notifaction-list.component';
 import { PilotOrdersComponent } from './pilot/pilot-orders/pilot-orders.component';
-
+import { ResturantMapComponent } from './resturant/main-resturant-map/main-resturant-map.component';
+import { PilotMapComponent } from './pilot/main-pilot-map/main-pilot-map.component';
 export class TranslateHttpLoader implements TranslateLoader {
   constructor(private http: Http, private prefix: string, private suffix: string) { }
 
@@ -66,7 +67,9 @@ export function createHttpLoaderFactory(http: Http) {
     PilotProfileComponent,
     PilotDetailComponent,
     NotifactionListComponent,
-    PilotOrdersComponent
+    PilotOrdersComponent,
+    ResturantMapComponent,
+    PilotMapComponent
   ],
   exports: [
     ReactiveFormsModule,

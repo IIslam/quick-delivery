@@ -8,4 +8,5 @@ export interface TokenDto {
     name: string;
     issued: string;
     expires: string;
+    type: string;
 }

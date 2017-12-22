@@ -23,8 +23,26 @@ export class AuthorizationEffectsService {
             .switchMap(action => {
                 return this.authProxyService.getTokenFromCredentials(action.payload)
                     .map(token => {
+                        console.log(token.access_token);
                         this.tokenStoreService.setToken(token.access_token);
-                        return AuthorizationActions.createLoginSuccessAction(token);
+                        return AuthorizationActions.onLoginSuccess(action.payload, token);
+                    })
+                    .catch(error => {
+                        return Observable.of(AuthorizationActions.createLoginFaildAction(error.json()));
+                    });
+            });
+    }
+
+    @Effect()
+    onLoginSuccess(): Observable<Action> {
+        return this.actions$
+            .ofType(AuthorizationActions.ON_LOG_IN_SUCCESS)
+            .switchMap(action => {
+                return this.authProxyService.getUserType(action.payload.user)
+                    .map(userType => {
+                        console.log('UserType----------------');
+                        console.log(userType);
+                        return AuthorizationActions.saveUserType(userType.type);
                     })
                     .catch(error => {
                         return Observable.of(AuthorizationActions.createLoginFaildAction(error.json()));

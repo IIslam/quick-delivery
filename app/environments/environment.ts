@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:29101',
+  baseUrl: 'http://deliveryzyada.com',
   client_id: '1',
   language: 'en'
 };

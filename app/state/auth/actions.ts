@@ -10,10 +10,42 @@ export namespace AuthorizationActions {
     export const ACTIVATE_SUCCESS = '[Auth] activate succeede and store token in state';
     export const ACTIVATE_FAIL = '[Auth] activate fail';
     export const LOG_IN = '[Auth] try to login';
+    export const ON_LOG_IN_SUCCESS = '[Auth] get user type';
+    export const SAVE_USER_TYPE = '[Auth] save user type';
     export const LOG_IN_SUCCESS = '[Auth] login succeeded add token to state';
     export const LOG_IN_FAIL = '[Auth] login failed Add Error Message';
     export const LOG_OUT = '[Auth] revoke token';
 
+    export function onLoginSuccess(user: any, token: TokenDto): Action {
+        // let data;
+        // data.user = user;
+        // data.token = token;
+        console.log('onlogin success');
+        console.log(user.email);
+        return {
+            type: ON_LOG_IN_SUCCESS,
+            payload: {
+                user: user,
+                token: token
+            }
+        };
+    }
+
+    export function saveUserType(type: string): Action {
+
+        if (type == 'pilot') {
+            return {
+                type: SAVE_USER_TYPE,
+                payload: 0
+            };
+        } else {
+            return {
+                type: SAVE_USER_TYPE,
+                payload: 1
+            };
+        }
+
+    }
 
     export function createRegisterAction(user: RegisterationModel): Action {
         return {
@@ -34,7 +66,6 @@ export namespace AuthorizationActions {
             payload: error
         }
     }
-
 
     export function createActivateSuccessAction(token: TokenDto): Action {
         return {

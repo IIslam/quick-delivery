@@ -16,6 +16,14 @@ export function AuthorizationStateReducers(state: AuthorizationState, action: Ac
                 isLoggedIn: false,
                 token: null
             }
+        case AuthorizationActions.ON_LOG_IN_SUCCESS:
+            console.log('on login success Reducer');
+            return {
+                ...state,
+                errorMessage: null,
+                isLoggedIn: true,
+                token: action.payload.token
+            };
         case AuthorizationActions.LOG_IN_SUCCESS:
             console.log('login success Reducer');
             return {
@@ -23,6 +31,12 @@ export function AuthorizationStateReducers(state: AuthorizationState, action: Ac
                 errorMessage: null,
                 isLoggedIn: true,
                 token: action.payload
+            };
+        case AuthorizationActions.SAVE_USER_TYPE:
+            console.log('Save user type');
+            return {
+                ...state,
+                type: action.payload
             };
         case AuthorizationActions.LOG_IN_FAIL:
             console.log(`Login Error:${JSON.stringify(action.payload)}`);

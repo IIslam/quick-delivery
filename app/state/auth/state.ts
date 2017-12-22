@@ -4,12 +4,13 @@ export interface AuthorizationState {
     isLoggedIn: boolean;
     isRegister: boolean;
     errorMessage: string;
-
+    type: number;
 }
 
 export const AuthorizationInitialState: AuthorizationState = {
     token: null,
     isLoggedIn: false,
     isRegister: false,
-    errorMessage: null
+    errorMessage: null,
+    type: null
 };
