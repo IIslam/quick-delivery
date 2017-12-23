@@ -6,11 +6,11 @@
   "readme": "NativeScript Application",
   "nativescript": {
     "id": "com.quick.delivery",
-    "tns-android": {
-      "version": "3.1.1"
-    },
     "tns-ios": {
       "version": "3.1.0"
+    },
+    "tns-android": {
+      "version": "3.4.0"
     }
   },
   "dependencies": {
@@ -35,7 +35,7 @@
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.8",
     "rxjs": "^5.1.0",
-    "tns-core-modules": "~3.0.0",
+    "tns-core-modules": "^3.4.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
