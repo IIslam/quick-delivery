@@ -19,7 +19,8 @@ export class ResutrantProxyService {
             })
             .map(s => s.json());
     }
-    motifacationList(): Observable<Array<any>> {
+
+    notifacationList(): Observable<Array<any>> {
         const headers = new Headers();
         return this.http.request('/api/Order/GetNotifactionList', {
             method: RequestMethod.Get,

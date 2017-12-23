@@ -8,8 +8,8 @@ import { RegisterComponent } from './authorization/containers/register/register-
 import { ResturantRegisterComponent } from './authorization/containers/resturant-register/resturant-register-component';
 import { HomeRegister } from './authorization/components/home-reister/home.register';
 import { SharedModule } from './shared';
-import { PilotModule } from './pilot/pilot.module';
-import { ResturantModule } from './resturant/resturant.module';
+// import { PilotModule } from './pilot/pilot.module';
+// import { ResturantModule } from './resturant/resturant.module';
 
 import { HomeComponent } from './shared/home/home.component';
 import { PilotProfileComponent } from './shared/pilot/pilot-profile/pilot-profile.component';
@@ -18,19 +18,37 @@ import { PilotOrdersComponent } from './shared/pilot/pilot-orders/pilot-orders.c
 import { PilotMapComponent } from './shared/pilot/main-pilot-map/main-pilot-map.component';
 import { ResturantMapComponent } from './shared/resturant/main-resturant-map/main-resturant-map.component';
 import { NotifactionListComponent } from './shared/resturant/notifaction-list/notifaction-list.component';
+import { ContactComponent } from './shared/contact/contact.component';
+import { AuthrizationGuardService } from './authorization/services/auth-guard.service';
 
 export const pilotRoutes: Routes = [
+  // {
+  //   path: 'pilot', component: PilotDetailComponent,
+  //   canActivate: [AuthrizationGuardService],
+  //   canActivateChild: [AuthrizationGuardService],
+  //   children: [
+  //     { path: '', redirectTo: '/pilot/home', pathMatch: 'full' },
   { path: 'pilot/home', component: PilotProfileComponent },
   { path: 'pilot/deliveries', component: PilotOrdersComponent },
   { path: 'pilot/wallet', component: PilotProfileComponent },
   { path: 'pilot/map', component: PilotMapComponent }
+  //   ]
+  // }
 ];
 
 export const resturantRoutes: Routes = [
+  // {
+  // path: 'resturant', component: PilotDetailComponent,
+  // canActivate: [AuthrizationGuardService],
+  // canActivateChild: [AuthrizationGuardService],
+  // children: [
+  //   { path: '', redirectTo: 'resturant/home', pathMatch: 'full' },
   { path: 'resturant/home', component: ResturantMapComponent },
   { path: 'resturant/pilots', component: PilotDetailComponent },
   { path: 'resturant/notifications', component: NotifactionListComponent },
   { path: 'resturant/map', component: ResturantMapComponent }
+  //   ]
+  // }
 ];
 
 export const routes: Routes = [
@@ -41,7 +59,7 @@ export const routes: Routes = [
   { path: 'register/resturant', component: ResturantRegisterComponent },
   { path: 'register', component: HomeRegister },
   { path: 'home', component: HomeComponent },
-
+  { path: 'contact', component: ContactComponent },
   ...pilotRoutes,
   ...resturantRoutes
 ];
@@ -51,8 +69,8 @@ export const routes: Routes = [
     NativeScriptRouterModule.forRoot(routes),
     SharedModule,
     AuthorizationModule,
-    PilotModule,
-    ResturantModule
+    // PilotModule,
+    // ResturantModule
   ],
   exports: [NativeScriptRouterModule]
 })

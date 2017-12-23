@@ -53,30 +53,28 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
   ) {
     this.setActionBarIcon(this.page);
     this.setDrawerTransition();
-    this.subscriptions.push(this.authorizationStateService.selectIsAuthenticated()
+    this.subscriptions.push(this.authorizationStateService.selectIsAuthenticatedType()
       .subscribe(value => {
         // Switch Case on isAuthenticated Enum and then Route to each module according to value
-        switch (value) {
-          case true:
-            this.navMenu = [
-              { name: 'القائمة الرئيسيه', commands: ['/resturant/home'] },
-              { name: 'بيانات الطيارين', commands: ['/resturant/pilots'] },
-              { name: 'الاشعارات', commands: ['/resturant/notifications'] },
-              { name: 'الاتصال بالادارة', commands: ['/resturant/contact'] },
-              { name: 'الخريطة الرئيسيه', commands: ['/resturant/map'] }
-            ];
-            break;
-          default:
-            this.navMenu = [
-              { name: 'القائمة الرئيسيه', commands: ['/pilot/home'] },
-              { name: 'توصيلاتى', commands: ['/pilot/deliveries'] },
-              { name: 'المحفظه', commands: ['/pilot/wallet'] },
-              { name: 'الاشعارات', commands: ['/pilot/notifications'] },
-              { name: 'الاعدادات', commands: ['/pilot/settings'] }, // Not finished Yet
-              { name: 'الاتصال بالادارة', commands: ['/pilot/contact'] },  // Not finished Yet
-              { name: 'الخريطة الرئيسيه', commands: ['/pilot/map'] }
-            ];
-            break;
+        if (value === 'resturant') {
+          this.navMenu = [
+            { name: 'القائمة الرئيسيه', commands: ['/resturant/home'] },
+            { name: 'بيانات الطيارين', commands: ['/resturant/pilots'] },
+            { name: 'الاشعارات', commands: ['/resturant/notifications'] },
+            { name: 'الاعدادات', commands: ['/contact'] }, // Not finished Yet
+            { name: 'الاتصال بالادارة', commands: ['/resturant/contact'] },
+            { name: 'الخريطة الرئيسيه', commands: ['/resturant/map'] }
+          ];
+        } else {
+          this.navMenu = [
+            { name: 'القائمة الرئيسيه', commands: ['/pilot/home'] },
+            { name: 'توصيلاتى', commands: ['/pilot/deliveries'] },
+            { name: 'المحفظه', commands: ['/pilot/wallet'] },
+            { name: 'الاشعارات', commands: ['/pilot/notifications'] },
+            { name: 'الاعدادات', commands: ['/contact'] }, // Not finished Yet
+            { name: 'الاتصال بالادارة', commands: ['/pilot/contact'] },  // Not finished Yet
+            { name: 'الخريطة الرئيسيه', commands: ['/pilot/map'] }
+          ];
         }
         // ------------------------------------------------------------------------
       }));

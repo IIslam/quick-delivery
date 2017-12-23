@@ -4,7 +4,7 @@ export interface AuthorizationState {
     isLoggedIn: boolean;
     isRegister: boolean;
     errorMessage: string;
-    type: number;
+    type: string;
 }
 
 export const AuthorizationInitialState: AuthorizationState = {

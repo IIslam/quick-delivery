@@ -22,6 +22,7 @@ import { NotifactionListComponent } from './resturant/notifaction-list/notifacti
 import { PilotOrdersComponent } from './pilot/pilot-orders/pilot-orders.component';
 import { ResturantMapComponent } from './resturant/main-resturant-map/main-resturant-map.component';
 import { PilotMapComponent } from './pilot/main-pilot-map/main-pilot-map.component';
+
 export class TranslateHttpLoader implements TranslateLoader {
   constructor(private http: Http, private prefix: string, private suffix: string) { }
 
@@ -82,6 +83,8 @@ export function createHttpLoaderFactory(http: Http) {
 
     SideDrawerPageComponent,
     BorderlessBtnDirective
+  ],
+  providers: [
   ]
 })
 export class SharedModule {

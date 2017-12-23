@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterExtensions } from 'nativescript-angular';
+import { ResutrantProxyService } from '../../../../proxy/services/resturant-service';
 
 @Component({
     selector: 'epw-notfication-list',
@@ -9,12 +10,27 @@ import { RouterExtensions } from 'nativescript-angular';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class NotifactionListComponent {
-    public myArrayItem: Array<any> = [{
-        text: 'تم وصول الطيار حسين محمد الي المطعم',
-    },
-    {
-        text: 'تم وصول الطيار حسين محمد الي المطعم',
-    },
-    ];
+export class NotifactionListComponent implements OnInit {
+    public myArrayItem: Array<any>;
+
+    constructor(private resturantProxyService: ResutrantProxyService) {
+    }
+    //  = [
+    //     {
+    //         text: 'تم وصول الطيار حسين محمد الي المطعم'
+    //     },
+    //     {
+    //         text: 'تم وصول الطيار حسين محمد الي المطعم',
+    //     },
+    // ];
+
+    ngOnInit(): void {
+        this.resturantProxyService.notifacationList().subscribe(
+            (res) => {
+                this.myArrayItem = res;
+            }
+        )
+    }
+
+
 }

@@ -11,6 +11,10 @@ export class AuthorizationStateService {
 
   constructor(private store: Store<State>) { }
 
+  selectIsAuthenticatedType(): Observable<string> {
+    return this.store.select(s => s.auth.type);
+  }
+
   selectIsAuthenticated(): Observable<boolean> {
     return this.store.select(s => s.auth.isLoggedIn);
   }

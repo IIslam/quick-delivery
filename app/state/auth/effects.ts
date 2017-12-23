@@ -42,7 +42,7 @@ export class AuthorizationEffectsService {
                     .map(userType => {
                         console.log('UserType----------------');
                         console.log(userType);
-                        return AuthorizationActions.saveUserType(userType.type);
+                        return AuthorizationActions.saveUserType(userType);
                     })
                     .catch(error => {
                         return Observable.of(AuthorizationActions.createLoginFaildAction(error.json()));

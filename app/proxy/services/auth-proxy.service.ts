@@ -29,13 +29,16 @@ export class AuthProxyService {
     });
   }
 
-  getUserType(model: models.MembershipCredentialsModel): Observable<dtos.UserType> {
+  getUserType(model: models.MembershipCredentialsModel): Observable<any> {
     console.log(model.email);
     console.log(model.password);
+    console.log('getuserType---------------');
     return this.http.request(`/api/user/checkuserstatus?email=${model.email}&password=${model.password}`, {
       method: RequestMethod.Get,
     }).map(s => {
-      return s.json()
+      console.log('----------------');
+      console.log(s.text());
+      return s.text();
     });
   }
 

@@ -15,10 +15,11 @@ export function initialState(tokenStoreService: TokenStoreService): State {
     }
     if (strStoredState) {
         const storedState = JSON.parse(strStoredState) as State;
-        if (storedState.auth.token && storedState.auth.token.access_token) {
+        if (storedState.auth.token && storedState.auth.token.access_token && storedState.auth.type) {
             tokenStoreService.setToken(storedState.auth.token.access_token);
             console.log(`saved state Username:${storedState.auth.token.name}`);
             console.log(`saved state : ${storedState.auth.isLoggedIn}`);
+            console.log('saved state type: ' + storedState.auth.type);
             return {
                 ...initial,
                 ...storedState

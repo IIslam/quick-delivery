@@ -17,9 +17,6 @@ export namespace AuthorizationActions {
     export const LOG_OUT = '[Auth] revoke token';
 
     export function onLoginSuccess(user: any, token: TokenDto): Action {
-        // let data;
-        // data.user = user;
-        // data.token = token;
         console.log('onlogin success');
         console.log(user.email);
         return {
@@ -32,19 +29,11 @@ export namespace AuthorizationActions {
     }
 
     export function saveUserType(type: string): Action {
-
-        if (type == 'pilot') {
-            return {
-                type: SAVE_USER_TYPE,
-                payload: 0
-            };
-        } else {
-            return {
-                type: SAVE_USER_TYPE,
-                payload: 1
-            };
-        }
-
+        console.log('Save user Type');
+        return {
+            type: SAVE_USER_TYPE,
+            payload: type
+        };
     }
 
     export function createRegisterAction(user: RegisterationModel): Action {

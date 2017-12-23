@@ -22,11 +22,17 @@ export class LoginComponent implements OnDestroy {
     this.errorMessage$ = this.authorizationStateService.selectErrorMessage();
     this.showLoading$ = this.authorizationStateService.selectIsLoading();
 
-    this.subscriptions.push(this.authorizationStateService.selectIsAuthenticated()
+    this.subscriptions.push(this.authorizationStateService.selectIsAuthenticatedType()
       .subscribe(value => {
         // Switch Case on isAuthenticated Enum and then Route to each module according to value
-        if (value) {
-          this.routerExtentions.navigate(['/'], { clearHistory: true });
+        if (value === 'pilot') {
+          this.routerExtentions.navigate(['/pilot/home'], { clearHistory: true });
+        }
+        if (value === 'resturant') {
+          this.routerExtentions.navigate(['/resturant/home', { clearHistory: true }]);
+        }
+        if (value === 'Super Admin') {
+          this.routerExtentions.navigate(['./resturant/home'], { clearHistory: true });
         }
         // ------------------------------------------------------------------------
       }));

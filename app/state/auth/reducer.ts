@@ -52,7 +52,7 @@ export function AuthorizationStateReducers(state: AuthorizationState, action: Ac
             return Object.assign({}, state, { isRegister: true, token: action.payload });
 
         case AuthorizationActions.LOG_OUT:
-            return Object.assign({}, state, { isLoggedIn: false, token: null });
+            return Object.assign({}, state, { isLoggedIn: false, token: null, type: null });
 
         case AuthorizationActions.ACTIVATE_SUCCESS:
             console.log('activate sucess');

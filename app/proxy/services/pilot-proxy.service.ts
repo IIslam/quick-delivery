@@ -14,6 +14,7 @@ Injectable()
 export class PilotProxyService {
     constructor(private http: Http) {
     }
+
     getpilots(): Observable<Array<any>> {
         return this.http.request('/api/Order/GetPilotList',
             {
@@ -33,6 +34,4 @@ export class PilotProxyService {
         })
             .map(res => res.json());
     }
-
-
 }
