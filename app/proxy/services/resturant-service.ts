@@ -19,7 +19,7 @@ export class ResutrantProxyService {
             })
             .map(s => s.json());
     }
-
+  
     notifacationList(): Observable<Array<any>> {
         const headers = new Headers();
         return this.http.request('/api/Order/GetNotifactionList', {

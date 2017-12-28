@@ -3,6 +3,7 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 import { StackLayout } from 'ui/layouts/stack-layout';
 import { RouterExtensions } from 'nativescript-angular';
+import { PilotProxyService } from '../../../../proxy/services/pilot-proxy.service';
 
 @Component({
     selector: 'pilot-orders',
@@ -12,62 +13,72 @@ import { RouterExtensions } from 'nativescript-angular';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class PilotOrdersComponent {
-    public myArrayItem: Array<any> = [{
-        name: "العمده",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "ارابياتا",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "بابا جونسون",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "بابا جونسون",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "بابا جونسون",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "بابا جونسون",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "بابا جونسون",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "بابا جونسون",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
-    },
-    {
-        name: "بابا جونسون",
-        phone: 123456,
-        ordetdate: 10,
-        distsnce: 5
+export class PilotOrdersComponent implements OnInit {
+     public myArrayItem: Array<any>;
+     public PilotId: any; 
+    constructor(private pilotSevice: PilotProxyService) {
+
     }
-    ];
+    ngOnInit(): void {
+       this.pilotSevice.getPilotOrderList(this.PilotId).subscribe(res => {
+          this.myArrayItem = res;
+          console.log(res);
+       });
+    }
+    //     name: "العمده",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "ارابياتا",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "بابا جونسون",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "بابا جونسون",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "بابا جونسون",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "بابا جونسون",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "بابا جونسون",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "بابا جونسون",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // },
+    // {
+    //     name: "بابا جونسون",
+    //     phone: 123456,
+    //     ordetdate: 10,
+    //     distsnce: 5
+    // }
+    // ];
 
 
 }
