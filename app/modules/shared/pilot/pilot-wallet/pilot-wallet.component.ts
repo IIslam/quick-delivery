@@ -8,21 +8,21 @@ import { PilotProxyService } from '../../../../proxy/services/pilot-proxy.servic
 import * as dtos from '../../../../proxy/dtos';
 
 @Component({
-    selector: 'profile',
+    selector: 'pilot-wallet',
     moduleId: module.id,
-    templateUrl: './pilot-profile.component.html',
-    styleUrls: ['./pilot-profile.component.css'],
+    templateUrl: './pilot-wallet.component.html',
+    styleUrls: ['./pilot-wallet.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class PilotProfileComponent implements OnInit {
+export class PilotWalletComponent implements OnInit {
     public pilotData: dtos.PilotProfile;
     public PilotId: any;  //this id belong to the pilot that logged in ...........
     constructor(private pilotService: PilotProxyService) { }
     ngOnInit() {
         this.pilotService.getPilotProfile().subscribe(res => {
             this.pilotData = res;
-            this.PilotId = res.id;
+            console.log(res);
         })
     }
 }

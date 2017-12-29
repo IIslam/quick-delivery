@@ -1,13 +1,16 @@
-<ActionBar title="المحفظه">
+<ActionBar title="الاعدادات">
 </ActionBar>
-<side-drawer-page [items]="myArrayItem" >
-    <GridLayout style="margin:5%;height:50%" let-item="item" columns="*,*,*" rows="*,*,*">
-        <Label col="0" row="0" class="text-center" [text]=""  text='النسبه'></Label>
-        <Label col="1" row="0" class="text-center" [text]="" text='اجمالى التكلفة'></Label>
-        <Label col="2" row="0" class="text-center" [text]="" text='عدد التوصيلات'></Label>
-        <Label col="0" row="1" class="text-center" [text]="" text='80 LE'></Label>
-        <Label col="1" row="1" class="text-center" [text]="" text='100 LE'></Label>
-        <Label col="2" row="1" class="text-center" [text]="" text='6'></Label>
-        <Label col="0" row="2" class="text-center" [text]="" colspan="3" text='10 LE'></Label>
-    </GridLayout>
+<side-drawer-page>
+    <StackLayout>
+        <Image src="">
+
+        </Image>
+        <Label class="text-center" [text]="PilotDate.name" text='النسبه'></Label>
+        <Label class="text-center" [text]="PilotData.email" text='اجمالى التكلفة'></Label>
+        <!-- <Label  class="text-center" [text]="PilotData." text='عدد التوصيلات'></Label>
+            <Label  class="text-center" [text]="" text='80 LE'></Label>
+            <Label  class="text-center" [text]="" text='100 LE'></Label>
+            <Label  class="text-center" [text]="" text='6'></Label>
+            <Label  class="text-center" [text]="" colspan="3" text='10 LE'></Label> -->
+    </StackLayout>
 </side-drawer-page>

@@ -16,12 +16,10 @@ export class PilotProxyService {
     }
 
     getpilots(): Observable<Array<any>> {
-        return this._http.request('/api/Order/GetPilotList',
-            {
-                method: RequestMethod.Get,
-            })
+        return this._http.request('/api/Order/GetPilotList', { method: RequestMethod.Get })
             .map(s => s.json());
     }
+
     requestPilot(pilotId): Observable<any> {
         // let search = new URLSearchParams();
         // search.append('pilotId', pilotId.toString());
@@ -31,30 +29,36 @@ export class PilotProxyService {
         //     method: RequestMethod.Post,
         //     search: search
         // })
-          //  .map(res => res.json());
-          const body = JSON.stringify(pilotId);
-          const headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
-          const options = new RequestOptions({ headers: headers });
-          return this._http.post('/api/Order/RequestPilot', body, options).map(res => res.json());
-    }
-	//get all orders made by speceif pilot. 
-    getPilotOrderList(PilotId): Observable<Array<any>> {
-        const body = JSON.stringify(PilotId);
+        //  .map(res => res.json());
+        const body = JSON.stringify(pilotId);
         const headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
         const options = new RequestOptions({ headers: headers });
-        return this._http.post('/api/Order/....', body, options).map(res => res.json());
+        return this._http.post('/api/Order/RequestPilot', body, options)
+            .map(res => res.json());
     }
-    getPilotProfile(PilotId): Observable<Array<any>> {
-        const body = JSON.stringify(PilotId);
+    //get all orders made by specific pilot.
+    //Ahmed working 
+    getPilotOrderList(): Observable<Array<any>> {
         const headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
         const options = new RequestOptions({ headers: headers });
-        return this._http.post('/api/Order/....', body, options).map(PilotProfileResult => PilotProfileResult.json());
+        return this._http.get('/api/Order/GetPilotOrder', options)
+            .map(res => res.json());
     }
 
+    //done 
+    getPilotProfile(): Observable<any> {
+        const headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
+        const options = new RequestOptions({ headers: headers });
+        return this._http.get('/api/user/getuserdata', options)
+            .map(PilotProfileResult => PilotProfileResult.json());
+    }
+
+    //working
     getPilotDetails(PilotId): Observable<Array<any>> {
         const body = JSON.stringify(PilotId);
         const headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
         const options = new RequestOptions({ headers: headers });
-        return this._http.post('/api/Order/', body, options).map(res => res.json());
+        return this._http.post('/api/Order/', body, options)
+            .map(res => res.json());
     }
 }

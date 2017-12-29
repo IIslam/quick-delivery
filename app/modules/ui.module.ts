@@ -10,14 +10,17 @@ import { HomeRegister } from './authorization/components/home-reister/home.regis
 import { SharedModule } from './shared';
 // import { PilotModule } from './pilot/pilot.module';
 // import { ResturantModule } from './resturant/resturant.module';
-
+// Pilot Components
 import { HomeComponent } from './shared/home/home.component';
 import { PilotProfileComponent } from './shared/pilot/pilot-profile/pilot-profile.component';
-import { PilotDetailComponent } from './shared/resturant/pilot-details/pilot-detail.component';
 import { PilotOrdersComponent } from './shared/pilot/pilot-orders/pilot-orders.component';
 import { PilotMapComponent } from './shared/pilot/main-pilot-map/main-pilot-map.component';
+import { PilotWalletComponent } from './shared/pilot/pilot-wallet/pilot-wallet.component';
+//Resturant Components
+import { PilotDetailComponent } from './shared/resturant/pilot-details/pilot-detail.component';
 import { ResturantMapComponent } from './shared/resturant/main-resturant-map/main-resturant-map.component';
 import { NotifactionListComponent } from './shared/resturant/notifaction-list/notifaction-list.component';
+//Global Components
 import { ContactComponent } from './shared/contact/contact.component';
 import { AuthrizationGuardService } from './authorization/services/auth-guard.service';
 
@@ -30,8 +33,9 @@ export const pilotRoutes: Routes = [
   //     { path: '', redirectTo: '/pilot/home', pathMatch: 'full' },
   { path: 'pilot/home', component: PilotProfileComponent },
   { path: 'pilot/deliveries', component: PilotOrdersComponent },
-  { path: 'pilot/wallet', component: PilotProfileComponent },
-  { path: 'pilot/map', component: PilotMapComponent }
+  { path: 'pilot/profile', component: PilotProfileComponent },
+  { path: 'pilot/map', component: PilotMapComponent },
+  { path: 'pilot/wallet', component: PilotWalletComponent }
   //   ]
   // }
 ];

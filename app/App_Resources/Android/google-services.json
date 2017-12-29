@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "160325896701",
+    "firebase_url": "https://quick-delivery-21d0f.firebaseio.com",
+    "project_id": "quick-delivery-21d0f",
+    "storage_bucket": "quick-delivery-21d0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160325896701:android:fc695d3c56f324b2",
+        "android_client_info": {
+          "package_name": "com.quick.delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160325896701-2a5kh1p1fj8cslo2q14sglko3peff0sq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCJQeR27MhoJBSxgVNftTp5rB5Jd3WOvQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

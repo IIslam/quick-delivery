@@ -16,12 +16,15 @@ import { LayoutPageComponent } from './layout-page/layout-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { PilotProfileComponent } from './pilot/pilot-profile/pilot-profile.component';
-import { PilotDetailComponent } from './resturant/pilot-details/pilot-detail.component';
+//Resturant Views
 import { NotifactionListComponent } from './resturant/notifaction-list/notifaction-list.component';
-import { PilotOrdersComponent } from './pilot/pilot-orders/pilot-orders.component';
+import { PilotDetailComponent } from './resturant/pilot-details/pilot-detail.component';
 import { ResturantMapComponent } from './resturant/main-resturant-map/main-resturant-map.component';
+//Pilot Views
+import { PilotProfileComponent } from './pilot/pilot-profile/pilot-profile.component';
+import { PilotOrdersComponent } from './pilot/pilot-orders/pilot-orders.component';
 import { PilotMapComponent } from './pilot/main-pilot-map/main-pilot-map.component';
+import { PilotWalletComponent } from './pilot/pilot-wallet/pilot-wallet.component';
 
 export class TranslateHttpLoader implements TranslateLoader {
   constructor(private http: Http, private prefix: string, private suffix: string) { }
@@ -70,7 +73,8 @@ export function createHttpLoaderFactory(http: Http) {
     NotifactionListComponent,
     PilotOrdersComponent,
     ResturantMapComponent,
-    PilotMapComponent
+    PilotMapComponent,
+    PilotWalletComponent
   ],
   exports: [
     ReactiveFormsModule,

@@ -4,6 +4,7 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { StackLayout } from 'ui/layouts/stack-layout';
 import { RouterExtensions } from 'nativescript-angular';
 import { PilotProxyService } from '../../../../proxy/services/pilot-proxy.service';
+import * as dtos from '../../../../proxy/dtos';
 
 @Component({
     selector: 'pilot-orders',
@@ -14,16 +15,16 @@ import { PilotProxyService } from '../../../../proxy/services/pilot-proxy.servic
 })
 
 export class PilotOrdersComponent implements OnInit {
-     public myArrayItem: Array<any>;
-     public PilotId: any; 
+    public myArrayItem: Array<dtos.PilotOrder>;
+    public PilotId: any;
     constructor(private pilotSevice: PilotProxyService) {
 
     }
     ngOnInit(): void {
-       this.pilotSevice.getPilotOrderList(this.PilotId).subscribe(res => {
-          this.myArrayItem = res;
-          console.log(res);
-       });
+        this.pilotSevice.getPilotOrderList().subscribe(res => {
+            this.myArrayItem = res;
+            console.log(res);
+        });
     }
     //     name: "العمده",
     //     phone: 123456,
