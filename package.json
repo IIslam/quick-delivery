@@ -28,7 +28,7 @@
     "@ngrx/store": "^2.2.3",
     "@ngx-translate/core": "^7.2.0",
     "@ngx-translate/http-loader": "^1.0.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "nativescript-angular": "~3.0.0",
     "nativescript-hook-debug-production": "^1.0.4",
     "nativescript-telerik-ui": "^2.0.1",
